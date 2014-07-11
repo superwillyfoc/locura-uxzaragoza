@@ -1,0 +1,618 @@
+@import "bourbon/bourbon";
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-regular-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/***** VARIABLES *****/
+/*********************/
+
+$league-gothic: 'LeagueGothicRegular', sans-serif;
+$blue: #00bcd4;
+$yellow: #effb41;
+$grey: #666;
+$red: #F20000;
+$green: #00BE0E;
+
+*, html, body{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+body {
+    font-family: $league-gothic;
+    min-height: 600px;
+    background-color: $yellow;
+    color: #111;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 85px;
+}
+
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+a{
+  color: inherit;
+  text-decoration: none;
+  padding: 0 0.1em;
+  background: #ccc;
+
+  @include transition (all 0.1s ease-in-out);
+  &:hover, &:focus{
+    background: #aaa;
+    color: #fff;  
+  }
+}//a
+
+.step{
+    position: relative;
+    width: 1000px;
+    padding: 20px;
+    margin: 20px auto;
+    font-family: $league-gothic;
+    font-size: 60px;
+    line-height: 85px;
+    margin: 0;
+    opacity: 0.05;
+    @include transition (opacity 0.75s);
+    &.active { opacity: 1 }
+}//.step
+
+.substep{
+  opacity: 0;
+  @include transition (all 0.4s);
+}
+
+.substep.active{
+  opacity: 1;
+}
+
+.substep.present{ 
+}
+
+.slide{
+  display: block;
+
+  width: 1000px;
+  height: 600px;
+  padding: 20px 40px;
+
+  color: #111;
+  font-family: $league-gothic;
+  
+  font-size: 60px;
+  line-height: 85px;
+  letter-spacing: -1px;
+}
+.hidden {
+    opacity:0;
+}
+.left {
+    float: left;
+    width: 48%;
+}
+.right {
+    float: right;
+    width: 48%;
+    text-align: right;
+}
+.lowercase{
+  text-transform: none;
+}
+h3{
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+img.bordered{
+  display: inline-block;
+  border: 1px solid $blue;
+  padding: 2px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/**** MAIN TITLE ****/
+#main-title{
+  text-align: center;
+  h1, h2{ margin: 0; padding: 0; line-height: 1.3em; }
+  h1{
+    font-size: 3.5em;
+    span.animated{
+      
+    }
+  }
+  h2{
+    font-size: 1.7em;
+    margin-bottom: 1.5em;
+  }
+  a{
+    color: #fff;
+    background-color: $blue;
+    padding: 2px 10px 0px 10px;
+    font-size: 0.85em;
+    &:hover{
+      color: #111;
+      background-color: #fff;
+    }
+  }
+  .date{
+    font-size: 0.95em;
+    span{
+      display: inline-block;
+      margin: 0px;
+      color: $grey;
+      &.month{
+        font-size: 0.75em;
+      }
+      &.bullet{
+        font-size: 0.75em;
+      }
+    }
+  }
+}//.main-title
+
+/**** LOCOS ****/
+#locos{
+  text-align: left;
+  cite{
+    width: 100%;
+    margin-top: 30px;
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.2em;
+    text-transform: none;
+    font-family: 'Monospace';
+    span.author{
+      display: inline-block;
+      color: $grey;
+      font-size: 0.7em;
+      margin-bottom: 30px;
+    }
+  }
+  span.jack{
+    display: inline-block;
+    width: 900px;
+    height: 508px;
+    background-color: $yellow;
+    background-image: url(../img/jack2.gif);
+    background-blend-mode: multiply;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  img{
+    width: 75%;
+    height: auto;
+    opacity: 0;
+  }
+}//#locos
+
+/**** ABOUT ME ****/
+
+#about-me{
+  z-index: 9000;
+  border: none;
+  border-radius: 0px;
+  overflow: hidden;
+  
+  h1{
+    font-size: 2.4em;
+    color: rgba(0,0,0,0.25);
+    margin-top: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0px;
+  }
+  .wrapper{
+    background: $blue url(../img/blue-background.png);
+    color: #fff;
+    position: relative; 
+    overflow: hidden;
+    padding: 70px;
+    z-index: 2;
+    height: 550px;
+    .col{
+      width: 48%;
+      &.left{ float: left; margin-top: 15px;}
+      &.right{ float: right; text-align: right; }
+    }
+    img{
+      width: 78%;
+      height: auto;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+    a{
+      background-color: $yellow;
+      color: #111;
+      padding: 6px 10px 0px 10px;
+      &:hover{
+        color: #111;
+        background-color: #fff;
+      }
+    }//a
+    ul{
+      li{
+        font-size: 0.9em;
+        margin-bottom: 0.05em;
+        &.cuentica{
+          font-size: 1.5em;
+          margin-bottom: 0.5em;
+          a{
+            background-color: #fff;
+            padding: 6px 20px 0px 20px;
+            &:hover{
+              color: #111;
+              background-color: $yellow;
+            }
+          }
+        }
+      }//li
+    }//ul
+    ul.networks{
+      clear: both;
+      text-align: center;
+      font-size: 0.65em;
+      position: absolute;
+      bottom: 50px;
+      width: 90%;
+      margin: 0;
+      padding: 0;
+      li{
+        display: inline-block;
+        margin: 0px 10px;
+        padding: 0px;
+        a{
+          i{
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }//.wrapper
+}//#about-me
+
+/**** LOCURA ****/
+
+#locura{
+  text-align: center;
+  .small{
+    font-size: 1.3em;
+  }
+  .big{
+    font-size: 5.2em;
+    line-height: 0.75em;
+  }
+}//#locura
+
+/**** PROBAR ****/
+
+#probar{
+  p{
+    width: 48%;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    @include transition (opacity 0.5s 1s);
+    &:nth-child(odd){ float: left; }
+    &:nth-child(even){ float: right; text-align: right; }
+    &.big{
+      width: auto;
+      float: none;
+      text-align: center;
+      font-size: 4.95em;
+      line-height: 1em;
+      margin-top: 0px;
+      @include transition (opacity 0.25s 0s);
+    }
+  }
+}//#probar
+
+
+/**** CRESTA ****/
+
+#cresta{
+  h2{
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+    strong{
+      display: inline-block;
+      background-color: $blue;
+      color: #fff;
+      padding: 15px 20px 7px 20px;
+    }
+  }
+  ul{
+    margin: 0px 0px 0px 1.15em;
+    padding: 0;
+    li{
+      margin: 0px 0px 0.75em 0px;
+      padding: 0px;
+      i{
+        display: inline-block;
+        color: $blue;
+        margin-right: 20px;
+      }
+      strike{
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+}//#cresta
+
+/**** CONSEGUIMOS ****/
+
+#conseguimos{
+  ul{
+    margin: 0px;
+    padding: 0;
+    li{
+      margin: 0px 0px 0.5em 0px;
+      padding: 0px;
+      i{
+        display: inline-block;
+        color: $blue;
+        margin-right: 20px;
+        font-size: 0.9em;
+      }
+      strike{
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+}//#conseguimos
+
+/**** EJEMPLOS ****/
+
+#ejemplos{
+  h2{
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom: 1em;
+  }
+  p.image{
+    text-align: center;
+    img{
+      opacity: 0;
+    }
+  }
+}//#ejemplos
+
+
+/**** EJEMPLOS - MAPA ****/
+
+#ejemplos-mapa{
+  .faded{
+    opacity: 0.35;
+  }
+}//#ejemplos-mapa
+
+/**** EJEMPLO - MAPBOX ****/
+
+#ejemplo-mapbox{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}//#ejemplo-mapbox
+
+#ejemplo-cartodb{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}//#ejemplo-cartodb
+
+/**** EJEMPLOS - CMS ****/
+
+#ejemplos-cms{
+  .faded{
+    opacity: 0.35;
+  }
+}//#ejemplos-cms
+
+/**** EJEMPLO - HTML ****/
+
+#ejemplo-html{
+  .faded{
+    opacity: 0.35;
+  }
+  p.image{
+    img{
+      width: 100%;
+      height: auto;
+      opacity: 0;
+    }
+  }
+}//#ejemplo-html
+
+/**** EJEMPLO - VITAMINAS ****/
+
+#ejemplo-vitaminas, #ejemplo-vitaminas2{
+  .columns{
+    margin-top: 100px;
+    text-align: justify;
+    &:before{ content: ''; display: block; width: 100%; }
+    &:after { content: ''; display: inline-block; width: 100%; }
+    .column{
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+      width: 49.5%;
+      margin: 0;
+      padding: 0;
+      a{
+        background: none;
+        line-height: 0px;
+      }
+      img{
+        width: 100%;
+      }
+      &.large{
+        width: 100%;
+      }
+    }
+  }
+}//#ejemplo-vitaminas
+
+/**** EJEMPLO - Al GRANO ****/
+
+#ejemplo-al-grano{
+  .columns{
+    margin-top: 100px;
+    text-align: justify;
+    &:before{ content: ''; display: block; width: 100%; }
+    &:after { content: ''; display: inline-block; width: 100%; }
+    .column{
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+      width: 49.5%;
+      margin: 0;
+      padding: 0;
+      a{
+        background: none;
+        line-height: 0px;
+      }
+      img{
+        width: 100%;
+      }
+      &.large{
+        width: 100%;
+      }
+    }
+  }
+}//#ejemplo-al-grano
+
+/**** RUEDA ****/
+
+#rueda{
+  text-align: center;
+}//#rueda
+
+/**** LISTING ****/
+
+.listing{
+  h3{
+    margin-bottom: 0.4em;
+    strike{
+      color: rgba(0,0,0,0.4);  
+      font-size: 0.75em;
+    }
+  }
+  ul{
+    margin: 0px 0px 0px 0em;
+    padding: 0px;
+    li{
+      margin: 0px 0px 0.5em 0px;
+      padding: 0px;
+      overflow: hidden;
+      a{
+        display: inline-block;
+        background-color: #111;
+        color: #fff;
+        padding: 7px 10px 0px 10px;
+        float: left;
+        &:hover{
+          background-color: $blue;
+        }
+      }//a
+      span{
+        display: inline-block;
+        float: right;
+        text-align: right;
+        opacity: 0.45;
+        margin-top: 7px;
+      }
+      &.main{
+        a{
+          background-color: $blue;
+          &:hover{
+            background-color: #111;
+          }
+        }
+      }
+      &.spanish{
+        a{
+          background-color: $green;
+          &:hover{
+            background-color: $blue;
+          }
+        }
+      }
+    }//li
+  }//ul
+  ul.movidas{
+    overflow: hidden;
+    text-transform: none;
+    li{
+      display: inline-block;
+      width: 48%;
+      font-size: 0.9em;
+      margin-bottom: 0;
+      &:nth-child(odd){ float: left; }
+      &:nth-child(even){ float: right; text-align: right; }
+      a{
+        display: inline-block;
+        background-color: transparent;
+        padding: 0px;
+        float: none;
+        color: #111;
+        &:hover{
+          color: $blue;
+        }
+      }//a
+    }
+  }
+}//#rueda
+
+/**** PREGUNTAS ****/
+#preguntas{
+  text-align: center;
+  .small{
+    font-size: 2em;
+    margin-bottom: 35px;
+  }
+  .big{
+    display: inline-block;
+    background-color: $blue;
+    font-size: 3em;
+    color: #fff;
+    padding: 75px 80px;
+  }
+  #dispara{
+    opacity: 0;
+  }
+}//#preguntas
+
+
+#overview { display: none }
+
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.impress-enabled          { pointer-events: none }
+.impress-enabled #impress { pointer-events: auto }
+
+.clear{
+  clear: both;
+}
