@@ -583,6 +583,55 @@ img.bordered{
   }
 }//#rueda
 
+/**** CREATED BY ****/
+#createdby{
+  .createdby-wrapper{
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+    padding: 50px 40px;
+    .top{
+      margin-bottom: 1.4em;
+      p{
+        line-height: 1.4em;
+        &.creado{
+          font-size: 0.65em;
+          color: rgba(255, 255, 255,0.85);
+        }
+        &.zancochando{
+          font-size: 2.7em;
+          line-height: 0.9em;
+          margin-bottom: 0.25em;
+        }
+        a{
+          background-color: $blue;
+          color: #fff;
+          padding-top: 7px;
+          &:hover{
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+    .bottom{
+      p{
+        font-size: 0.45em;
+        line-height: 1.4em;
+        text-transform: none;
+        font-family: 'monospace';
+        a{
+          background-color: transparent;
+          padding: 0px;
+          color: $blue;
+          &:hover{
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }//.createdby-wrapper
+}//#createdby
+
 /**** PREGUNTAS ****/
 #preguntas{
   text-align: center;

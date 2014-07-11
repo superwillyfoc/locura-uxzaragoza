@@ -461,6 +461,41 @@ img.bordered {
       .listing ul.movidas li a:hover {
         color: #00bcd4; }
 
+/**** CREATED BY ****/
+#createdby .createdby-wrapper {
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  padding: 50px 40px; }
+  #createdby .createdby-wrapper .top {
+    margin-bottom: 1.4em; }
+    #createdby .createdby-wrapper .top p {
+      line-height: 1.4em; }
+      #createdby .createdby-wrapper .top p.creado {
+        font-size: 0.65em;
+        color: rgba(255, 255, 255, 0.85); }
+      #createdby .createdby-wrapper .top p.zancochando {
+        font-size: 2.7em;
+        line-height: 0.9em;
+        margin-bottom: 0.25em; }
+      #createdby .createdby-wrapper .top p a {
+        background-color: #00bcd4;
+        color: #fff;
+        padding-top: 7px; }
+        #createdby .createdby-wrapper .top p a:hover {
+          background-color: #effb41; }
+  #createdby .createdby-wrapper .bottom p {
+    font-size: 0.45em;
+    line-height: 1.4em;
+    text-transform: none;
+    font-family: 'monospace'; }
+    #createdby .createdby-wrapper .bottom p a {
+      background-color: transparent;
+      padding: 0px;
+      color: #00bcd4; }
+      #createdby .createdby-wrapper .bottom p a:hover {
+        color: #effb41; }
+
 /**** PREGUNTAS ****/
 #preguntas {
   text-align: center; }
